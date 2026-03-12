@@ -201,7 +201,7 @@ InputPROSAIL <- get_InputPROSAIL(atbd = TRUE, GeomAcq = GeomAcq)
 ```{r Generate_BRF_LUT_atbd}
 res <- Generate_LUT_PROSAIL(SAILversion = '4SAIL',
                             InputPROSAIL = InputPROSAIL,
-                            SpecPROSPECT = prospect::SpecPROSPECT_FullRange,
+                            SpecPROSPECT = prospect::spec_prospect_full_range,
                             SpecSOIL = SpecSOIL,
                             SpecATM = SpecATM)
 BRF_LUT_1nm <- res$BRF
@@ -213,7 +213,7 @@ InputPROSAIL$albedo <- res$albedo
 
 - Apply sensor SRF
 ```{r Apply_SRF_atbd}
-BRF_LUT <- applySensorCharacteristics(wvl = prospect::SpecPROSPECT_FullRange$lambda, 
+BRF_LUT <- applySensorCharacteristics(wvl = prospect::spec_prospect_full_range$lambda, 
                                       SRF = SRF, 
                                       InRefl = BRF_LUT_1nm)
 # identify spectral bands in LUT
@@ -410,7 +410,7 @@ InputPROSAIL <- get_InputPROSAIL(minval = minval, maxval = maxval,
 ```{r Generate_BRF_LUT_user}
 res <- Generate_LUT_PROSAIL(SAILversion = '4SAIL',
                             InputPROSAIL = InputPROSAIL,
-                            SpecPROSPECT = prospect::SpecPROSPECT_FullRange,
+                            SpecPROSPECT = prospect::spec_prospect_full_range,
                             SpecSOIL = SpecSOIL,
                             SpecATM = SpecATM)
 BRF_LUT_1nm <- res$BRF
@@ -421,7 +421,7 @@ InputPROSAIL$albedo <- res$albedo
 
 - Apply sensor SRF
 ```{r Apply_SRF_user}
-BRF_LUT <- applySensorCharacteristics(wvl = prospect::SpecPROSPECT_FullRange$lambda, 
+BRF_LUT <- applySensorCharacteristics(wvl = prospect::spec_prospect_full_range$lambda, 
                                       SRF = SRF, 
                                       InRefl = BRF_LUT_1nm)
 # identify spectral bands in LUT

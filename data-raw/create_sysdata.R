@@ -1,4 +1,4 @@
-#' SpecPROSPECT_FullRange: optical constants defined for PROSPECT
+#' spec_prospect_full_range: optical constants defined for PROSPECT
 #'
 #' Corresponds to spectral bands, refractive index and specific absorption
 #' coefficient for each chemica constituent, defined over the spectral domain
@@ -9,7 +9,7 @@
 #'  http://dx.doi.org/10.1016/j.rse.2017.03.004
 #'  https://doi.org/10.1016/j.rse.2020.112173
 #'
-SpecPROSPECT_FullRange <- read.table(file = 'data-raw/dataSpec_PRO.txt',
+spec_prospect_full_range <- read.table(file = 'data-raw/dataSpec_PRO.txt',
                                      header = TRUE,
                                      sep = '\t')
 
@@ -17,10 +17,10 @@ SpecPROSPECT_FullRange <- read.table(file = 'data-raw/dataSpec_PRO.txt',
 #' averaged over all directions of incidence and over all polarizations for
 #' solid angle of 90 and 40 degrees
 #'
-calctav_90 <- prospect::calctav(90, nr = SpecPROSPECT_FullRange$nrefrac)
-calctav_40 <- prospect::calctav(40, nr = SpecPROSPECT_FullRange$nrefrac)
-SpecPROSPECT_FullRange$calctav_90 <- calctav_90
-SpecPROSPECT_FullRange$calctav_40 <- calctav_40
+calctav_90 <- prospect::calctav(90, nr = spec_prospect_full_range$nrefrac)
+calctav_40 <- prospect::calctav(40, nr = spec_prospect_full_range$nrefrac)
+spec_prospect_full_range$calctav_90 <- calctav_90
+spec_prospect_full_range$calctav_40 <- calctav_40
 
 # read dataspec file and save it in a dataframe
 dataSoil_Atm <- read.table(file = 'data-raw/dataSpec_SOIL_ATM.txt',
@@ -34,6 +34,6 @@ SpecATM <- data.frame('lambda' = dataSoil_Atm$lambda,
                       'Direct_Light' = dataSoil_Atm$Direct_Light,
                       'Diffuse_Light' = dataSoil_Atm$Diffuse_Light)
 
-usethis::use_data(SpecPROSPECT_FullRange, SpecSOIL, SpecATM,
+usethis::use_data(spec_prospect_full_range, SpecSOIL, SpecATM,
                   internal = FALSE,
                   overwrite = TRUE)

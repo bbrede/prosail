@@ -176,7 +176,7 @@ PRO4SAIL <- function(Spec_Sensor = NULL, Input_PROSPECT = NULL, N = 1.5,
                      fraction_brown = 0.0, diss = 0.0, Cv = 1, Zeta = 1,
                      SAILversion = '4SAIL', BrownLOP = NULL){
 
-  if (is.null(Spec_Sensor)) Spec_Sensor <- prospect::SpecPROSPECT_FullRange
+  if (is.null(Spec_Sensor)) Spec_Sensor <- prospect::spec_prospect_full_range
   if (is.null(rsoil)) rsoil <- prosail::SpecSOIL$Dry_Soil
   #	PROSPECT: LEAF OPTICAL PROPERTIES
   LOP <- adjust_PROSPECT_2_SAIL(SAILversion = SAILversion,

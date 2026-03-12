@@ -28,7 +28,7 @@ test_that("PROSAIL iterative optimization", {
                         InitialGuess = Init,
                         LowerBound = LB,
                         UpperBound = UB,
-                        SpecPROSPECT_Sensor = SpecPROSPECT_FullRange,
+                        SpecPROSPECT_Sensor = spec_prospect_full_range,
                         SpecATM_Sensor = SpecATM,
                         SpecSOIL_Sensor = SpecSOIL,
                         TypeLidf = 2, ParmSet = ParmSet)

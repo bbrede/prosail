@@ -46,7 +46,7 @@ and 'Generate_LUT_BRF'
 - PROSAIL_Hybrid_Train: convert BRF_LUT into data.frame to apply dplyr::slice
 
 ## change
-- update tutorial #2: 'wvl <- SpecPROSPECT_FullRange$lambda'
+- update tutorial #2: 'wvl <- spec_prospect_full_range$lambda'
 
 # prosail v2.5.2
 
