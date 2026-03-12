@@ -1353,8 +1353,8 @@ adjust_PROSPECT_2_SAIL <- function(SAILversion, Spec_Sensor, Input_PROSPECT,
                                                       BROWN[1], EWT[1], LMA[1],
                                                       PROT[1], CBC[1], N[1],
                                                       alpha[1])
-  GreenLOP <- prospect::prospect(spec_prospect = Spec_Sensor,
-                                 input_prospect = inprospect_green)
+  GreenLOP <- prospect(spec_prospect = Spec_Sensor,
+					   input_prospect = inprospect_green)
   if (SAILversion =='4SAIL2'){
     if (is.null(Input_PROSPECT)){
       Input_PROSPECT <- data.frame('CHL' = CHL, 'CAR' = CAR, 'ANT' = ANT,
@@ -1380,8 +1380,8 @@ adjust_PROSPECT_2_SAIL <- function(SAILversion, Spec_Sensor, Input_PROSPECT,
           SAILversion <- '4SAIL'
         } else {
           inprospect_brown <- prospect::define_Input_PROSPECT(Input_PROSPECT[2,])
-          BrownLOP <- prospect::prospect(SpecPROSPECT = Spec_Sensor,
-                                         Input_PROSPECT = inprospect_brown)
+          BrownLOP <- prospect(SpecPROSPECT = Spec_Sensor,
+                               Input_PROSPECT = inprospect_brown)
         }
       }
     }
